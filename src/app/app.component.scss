@@ -1,3 +1,63 @@
-.activeHeure{
-  color: red;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*::-webkit-scrollbar{
+  width: 0.5rem;
 }
+.main{
+  font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    height: 60vh;
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    // padding: 0 1rem  0 2rem;
+    overflow: scroll;
+    box-shadow: 0px 2px 9px 1px rgb(237, 237, 237);
+    border-radius: 1rem;
+    position: relative;
+    .dayList{
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100vw;
+      padding-left: 7.5rem;
+      overflow: scroll;
+      border-bottom: 1px solid rgb(218, 218, 218);
+      li{
+        text-transform: capitalize;
+        font-weight: 600;
+        color: rgb(194, 194, 194);
+      }
+    }
+    .container{
+      position: fixed;
+      height: 48vh;
+      overflow: scroll;
+      margin: 6rem 0.6rem 0 0;
+      background: white;
+      padding: 1rem 0 0 2rem;
+      .heureSection{
+        width: 8vw;
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        height: 50vh;
+        overflow-y: scroll;
+        left: 9vw;
+        .heureSection_Contain{
+          display: flex;
+          gap: 1rem;
+          hr{
+            
+          }
+        }
+    }
+    }
+}
+
+

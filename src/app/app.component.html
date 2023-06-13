@@ -1,11 +1,23 @@
-<main>
-  <section>
+<main class="main">
+  <section class="">
     <div>
-      <ng-container *ngFor="let item of hoursOfDay">
-        <p [ngClass]="{'activeHeure': heureAct === item.split(':')[0]}"> {{item}} </p>
-      </ng-container>
+      <ul class="dayList">
+        <li class="day" *ngFor="let day of daysOfWeek" [innerHTML]="day.split('.').reverse().join('<br/> ')"></li>
+      </ul>
     </div>
   </section>
-  <section></section>
+  <section class="container">
+    <div class="heureSection">
+      <ng-container *ngFor="let item of hoursOfDay">
+        <div class="heureSection_Contain">
+          <p [ngClass]="{'activeHeure': heureAct === item.split(':')[0]}"> {{item}} </p>
+          <hr>
+        </div>
+      </ng-container>
+    </div>
+    <div>
+
+    </div>
+</section>
   <section></section>
 </main>

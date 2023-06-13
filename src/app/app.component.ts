@@ -9,12 +9,14 @@ export class AppComponent {
   title = 'planner';
 
   hoursOfDay: string[] = [];
+  daysOfWeek: string[] = [];
 
   heureActuelle : string = '';
   heureAct : string= ''
 
   constructor(){
     this.updateCurrentTime();
+    this.daysOfWeek = this.getDaysOfWeek();
     setInterval(() => {
       this.updateCurrentTime()
     }, 1000)
@@ -31,9 +33,19 @@ export class AppComponent {
         const formattedHour = hour.toString().padStart(2, '0');
         this.hoursOfDay.push(`${formattedHour}:00`);
       }
-
       console.log(this.heureAct);
-
-
   }
+  private getDaysOfWeek(): string[] {
+    const daysOfWeek: string[] = [];
+    const today = new Date();
+
+    for (let i = 0; i < 7; i++) {
+      const day = new Date(today.getTime() + i * 24 * 60 * 60 * 1000);
+      const formattedDay = day.toLocaleDateString('fr-FR', { day: 'numeric', weekday: 'short' });
+      daysOfWeek.push(formattedDay);
+    }
+
+    return daysOfWeek;
+  }
+
 }
