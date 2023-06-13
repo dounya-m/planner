@@ -1,0 +1,11 @@
+<main>
+  <section>
+    <div>
+      <ng-container *ngFor="let item of hoursOfDay">
+        <p [ngClass]="{'activeHeure': heureAct === item.split(':')[0]}"> {{item}} </p>
+      </ng-container>
+    </div>
+  </section>
+  <section></section>
+  <section></section>
+</main>
